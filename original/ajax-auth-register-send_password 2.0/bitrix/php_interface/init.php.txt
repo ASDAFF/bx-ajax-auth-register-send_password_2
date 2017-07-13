@@ -1,0 +1,47 @@
+<?
+AddEventHandler("main", "OnBeforeUserRegister", "OnBeforeUserRegisterHandler");
+function OnBeforeUserRegisterHandler(&$arFields)
+{
+	global $APPLICATION;
+
+	//CSS ANTIBOT
+	if(isset($_REQUEST['ANTIBOT']) && is_array($_REQUEST['ANTIBOT']))
+	{
+		foreach($_REQUEST['ANTIBOT'] as $k=>$v)
+			if(empty($v))
+				unset($_REQUEST['ANTIBOT'][$k]);
+	}
+
+	if($_REQUEST['ANTIBOT'] || !isset($_REQUEST['ANTIBOT']))
+	{
+		$APPLICATION->ThrowException('Ошибка регистрации.');
+		return false;
+	}
+	//\\CSS ANTIBOT
+}
+
+AddEventHandler("main", "OnAfterUserRegister", "OnAfterUserRegisterHandler");
+function OnAfterUserRegisterHandler(&$arFields)
+{
+	//Отправим письмо пользователю после регистрации со всеми данными
+	$arUserFields = array(
+		"USER_ID"   => $arFields["USER_ID"],
+		"STATUS"    => ($arFields["ACTIVE"] == "Y" ? 'Активен' : 'Не активен'),
+		"MESSAGE"   => '',
+		"LOGIN"     => $arFields["LOGIN"],
+		"PASSWORD"  => $arFields["PASSWORD"],
+		"URL_LOGIN" => urlencode($arFields["LOGIN"]),
+		"CHECKWORD" => $arFields["CHECKWORD"],
+		"NAME"      => $arFields["NAME"],
+		"LAST_NAME" => $arFields["LAST_NAME"],
+		"EMAIL"     => $arFields["EMAIL"],
+	);
+
+	//CEvent::Send('USER_INFO', SITE_ID, $arFields, 'N');
+	CEvent::SendImmediate('USER_INFO', SITE_ID, $arUserFields, 'N');
+
+	//Отправим стандартную информацию пользователю, но без пароля,
+	//тогда отправку выше CEvent::SendImmediate(0 надо закомментить
+	//CUser::SendUserInfo($USER->GetID(), SITE_ID, 'Вы успешно зарегистрированы.', true);
+}
+?>

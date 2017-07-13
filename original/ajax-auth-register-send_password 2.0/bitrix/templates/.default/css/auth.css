@@ -1,0 +1,37 @@
+/* @group #auth-modal */
+#auth-link{font-size:12px;border-bottom:1px dotted;text-decoration:none;}
+#auth-link:hover{border-bottom:1px solid;}
+#auth-modal .uk-modal-dialog{width:300px}
+#auth-modal .ajax-link{border-bottom:1px dotted;text-decoration:none;}
+#auth-modal .ajax-link:hover{border-bottom:1px solid;text-decoration:none;}
+#auth-modal .bx-captcha{display:inline-block; width:180px; height:40px; margin:0 5px 5px 0; vertical-align:middle; overflow:hidden}
+#auth-modal .errortext{color: #ff0000;font-size: 13px;}
+#auth-modal .notetext{color: #008000;font-size: 13px;}
+#auth-modal .asterisk{color: #ff0000;display:inline-block;margin-left:2px}
+#auth-modal .api-mf-antibot {border: 0 none !important;font-size: 0 !important;height: 0 !important;line-height: 0 !important;padding: 0 !important;position: absolute !important;right: 0 !important;top: 0 !important;width: 0 !important;}
+
+#auth-modal .auth-services .bx-authform-title{display:block; float:left;margin-top:3px;}
+#auth-modal .auth-services .bx-authform-social{float:right;overflow:hidden;display:block}
+#auth-modal .bx-authform-social ul{margin:0; padding:0; list-style:none}
+#auth-modal .bx-authform-social ul li{float:left; margin-left:5px}
+#auth-modal .bx-authform-social-icon{font-family: FontAwesome; display: inline-block; font-weight: 400; font-style: normal; line-height: 1; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale }
+#auth-modal .bx-authform-social-icon{border:1px solid;text-decoration:none;padding:5px;line-height:15px; -webkit-border-radius:100%; -moz-border-radius:100%; border-radius:100%;}
+#auth-modal .bx-authform-social-icon:hover{opacity:0.9;filter:alpha(opacity:90)}
+#auth-modal .bx-authform-social-icon.dropbox {content: "\f16b"}
+#auth-modal .bx-authform-social-icon.openid {content: "\f19b"}
+#auth-modal .bx-authform-social-icon.google {content: "\f1a0"}
+#auth-modal .bx-authform-social-icon.vkontakte:before {content: "\f189"}
+#auth-modal .bx-authform-social-icon.twitter:before{ content: "\f099" }
+#auth-modal .bx-authform-social-icon.facebook {content: "\f082"}
+#auth-modal .bx-authform-social-icon.google-plus {content: "\f0d5"}
+#auth-modal .bx-authform-social-icon.odnoklassniki {content: "\f264"}
+
+#auth-modal .bx-authform-social-icon.box {content: "\f090"}
+#auth-modal .bx-authform-social-icon.bitrix24 {content: "\f090"}
+#auth-modal .bx-authform-social-icon.yandex {content: "\f090"}
+#auth-modal .bx-authform-social-icon.mymailru {content: "\f090"}
+#auth-modal .bx-authform-social-icon.livejournal {content: "\f090"}
+#auth-modal .bx-authform-social-icon.openid-mail-ru {content: "\f090"}
+#auth-modal .bx-authform-social-icon.liveid {content: "\f090"}
+#auth-modal .bx-authform-social-icon.liveinternet {}
+#auth-modal .bx-authform-social-icon.blogger {content: "\f090"}
